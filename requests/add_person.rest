@@ -6,3 +6,37 @@ Content-Type: application/json
     "id": 5,
     "number": 12345
 }
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Juan Perez",
+    "number": 345678
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Sandra Flores"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "number": 987654
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{ 
+    "name": "Arto Hellas", 
+    "number": "040-123456"
+}
