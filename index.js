@@ -13,6 +13,8 @@ morgan.token('data', function getData (req) {
 
 app.use(cors())
 
+app.use(express.static('dist'))
+
 let persons = [
     { 
       "id": 1,
