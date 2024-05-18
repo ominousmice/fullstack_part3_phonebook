@@ -48,14 +48,16 @@ app.get('/api/persons', (request, response) => {
 })
 
 app.get('/info', (request, response) => {
-    response.send(
-        `
-        <div>
-            <p>Phonebook has info for ${persons.length} people</p>
-            <p>${Date()}</p>
-        </div>
-        `
-    )
+    Person.find({}).then(people => {
+        response.send(
+            `
+            <div>
+                <p>Phonebook has info for ${people.length} people</p>
+                <p>${Date()}</p>
+            </div>
+            `
+        )
+    })
 })
 
 app.get('/api/persons/:id', (request, response, next) => {
@@ -93,18 +95,9 @@ app.post('/api/persons', (request, response) => {
         })
     }
 
-    /*
-    if (persons.filter(p => p.name === body.name).length) {
-        return response.status(400).json({
-            error: 'name must be unique'
-        })
-    }
-    */
-
     const person = new Person({
         name: body.name,
         number: body.number,
-        //id: Math.floor(Math.random() * 100000)
     })
 
     person.save().then(savedPerson => {
