@@ -49,6 +49,10 @@ const App = () => {
           setSuccessMessage(`${newName}'s number was updated`)
           setTimeout(() => {setSuccessMessage(null)}, 5000)
         })
+        .catch(error => {
+          setErrorMessage(error.response.data.error)
+          setTimeout(() => {setErrorMessage(null)}, 5000)
+        })
       }
     }
     
@@ -78,9 +82,6 @@ const App = () => {
         })
     }
   }
-  /* If I create a new person and immediately delete it without refreshing the page,
-    I get a 404 Not Found response. But I'm guessing it's an issue with the server?
-  */
 
   const peopleToShow = persons.filter(person => person.name.toLowerCase().includes(filter.toLowerCase()))
 

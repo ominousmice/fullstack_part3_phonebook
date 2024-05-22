@@ -22,7 +22,18 @@ const personSchema = new mongoose.Schema({
     },
     number: {
         type: String,
-        required: true
+        required: true,
+        minLength: 8,
+        validate: {
+            validator: function(nmb) {
+                return(/^\d{2,3}-\d+$/.test(nmb))
+            },
+            // Check that the number starts with 2 or 3 digits, then a hyphen, then ends with however many digits
+            // JavaScript string pattern with RegExp
+            message: props => `${props.value} is not a valid phone number. It should have length of 8 or more 
+                and be formed of two parts that are separated by -, the first part has two or three numbers 
+                and the second part also consists of numbers.`
+        }
     }
 })
 

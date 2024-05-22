@@ -49,3 +49,39 @@ Content-Type: application/json
     "name": "abc", 
     "number": "040-123456"
 }
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{ 
+    "name": "Juanito", 
+    "number": "2-3456"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{ 
+    "name": "Juanito", 
+    "number": "3456-234"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{ 
+    "name": "Juanito", 
+    "number": "34-67h77665"
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{ 
+    "name": "Yolanda Ferrero", 
+    "number": "040-22334455"
+}
