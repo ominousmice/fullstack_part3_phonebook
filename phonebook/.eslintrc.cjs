@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { commonjs: true, node: true, es2020: true },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -17,5 +17,30 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    '@stylistic/js/indent': [
+        'error',
+        2
+    ],
+    '@stylistic/js/linebreak-style': [
+        'error',
+        'unix'
+    ],
+    '@stylistic/js/quotes': [
+        'error',
+        'single'
+    ],
+    '@stylistic/js/semi': [
+        'error',
+        'never'
+    ],
+    'eqeqeq': 'error',
+    'no-trailing-spaces': 'error',
+    'object-curly-spacing': [
+        'error', 'always'
+    ],
+    'arrow-spacing': [
+        'error', { 'before': true, 'after': true }
+    ],
+    'no-console': 0
   },
 }
